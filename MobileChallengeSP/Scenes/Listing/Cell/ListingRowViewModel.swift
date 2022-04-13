@@ -2,7 +2,7 @@
 //  ListingRowViewModel.swift
 //  MobileChallengeSP
 //
-//  Created by Waqas Naseem on 13.04.22.
+//  Created by Waqas Naseem on 14.04.22.
 //
 
 import Foundation

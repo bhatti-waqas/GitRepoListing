@@ -2,7 +2,7 @@
 //  Listingcell.swift
 //  MobileChallengeSP
 //
-//  Created by Waqas Naseem on 11/9/21.
+//  Created by Waqas Naseem on 14.4.22
 //
 
 import UIKit
@@ -28,7 +28,7 @@ final class ListingTableViewCell: UITableViewCell {
         nameLabel.text = viewModel.name
         descriptionLabel.text = viewModel.id.toString()
         ownerNameLabel.text = viewModel.owner.login
-        guard let imageUrl = URL(string: viewModel.owner.avatarUrl) else { return }
-        ownerImageView.setImage(with: imageUrl)
+        guard let o = URL(string: viewModel.owner.avatarUrl) else { return }
+        ownerImageView.setImage(with: o)
     }
 }
