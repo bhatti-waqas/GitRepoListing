@@ -11,7 +11,6 @@ extension UIColor {
     
     convenience init(hex: UInt32) {
         let mask = 0x000000FF
-        // swiftlint:disable identifier_name
         let r = Int(hex >> 16) & mask
         let g = Int(hex >> 8) & mask
         let b = Int(hex) & mask

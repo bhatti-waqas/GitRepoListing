@@ -23,7 +23,18 @@ final class AppNavigationController: UINavigationController {
         navigationBar.tintColor = .white
         navigationController?.navigationBar.isTranslucent = false
         navigationBar.titleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: UIColor.red,
+            [NSAttributedString.Key.foregroundColor: getForeGroundColorForNavigationTitle(),
              NSAttributedString.Key.font: UIFont(.avenirDemiBold, size: .standard(.h3))]
+    }
+    
+    private func getForeGroundColorForNavigationTitle() -> UIColor {
+        return UIColor { traitCollection in
+            switch traitCollection.userInterfaceStyle {
+            case .dark:
+                return UIColor.white
+            default:
+                return UIColor.black
+            }
+        }
     }
 }
