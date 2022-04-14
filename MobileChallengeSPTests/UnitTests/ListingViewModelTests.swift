@@ -16,33 +16,32 @@ final class ListingViewModelTests: XCTestCase {
     private let readyStateExpectation = XCTestExpectation(description: "Should have ready Sate")
     
     func test_when_fetchingFailed_shouldHaveError() {
-        //1. given
+        // 1. given
         let useCase = ListingUseCaseMock()
         let viewModel = ListingViewModel(with: useCase, navigator: navigator)
         viewModel.delegate = self
         
-        //2. when
+        // 2. when
         viewModel.load()
         
-        //waitForExpectations(timeout: 1.0, handler: nil)
         wait(for: [errorStateExpectation], timeout: 1.0)
-        //3. then
+        // 3. then
         XCTAssertTrue(isErrorStateTriggered, "Should trigger error state")
     }
     
     func test_when_fetchingSuccessful_shouldHaveReadyState() {
-        //1. given
+        // 1. given
         let useCase = ListingUseCaseMock()
         let listingResponse = getMockListingResponse()
-        useCase.fetchListingsResult = .success(listingResponse.results)
+        useCase.fetchListingsResult = .success(listingResponse.items)
         let viewModel = ListingViewModel(with: useCase, navigator: navigator)
         viewModel.delegate = self
         
-        //2. when
+        // 2. when
         viewModel.load()
         
         wait(for: [readyStateExpectation], timeout: 1.0)
-        //3. then
+        // 3. then
         XCTAssertTrue(isReadyStateTriggered, "Should trigger ready state")
     }
     
@@ -52,8 +51,12 @@ final class ListingViewModelTests: XCTestCase {
         super.tearDown()
     }
 }
-//MARK: ViewModel Delegates
+// MARK: ViewModel Delegates
 extension ListingViewModelTests: ListingViewModelDelegate {
+    
+    func onViewModelNeedsUpdate(at indexPath: IndexPath) {
+    }
+    
     func onViewModelReady() {
         isReadyStateTriggered = true
         readyStateExpectation.fulfill()
@@ -65,13 +68,13 @@ extension ListingViewModelTests: ListingViewModelDelegate {
     }
 }
 
-//MARK: MockResponseBuilder
+// MARK: MockResponseBuilder
 extension ListingViewModelTests {
-    private func getMockListingResponse() -> ListingResponseModel {
+    private func getMockListingResponse() -> RespositoryResponseModel {
         do {
-            let path = Bundle(for: ListingViewModelTests.self).path(forResource: "Listings", ofType: "json")!
+            let path = Bundle(for: ListingViewModelTests.self).path(forResource: "Repositories", ofType: "json")!
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
-            return try JSONDecoder().decode(ListingResponseModel.self, from: data)
+            return try JSONDecoder().decode(RespositoryResponseModel.self, from: data)
         } catch {
             fatalError("Error: \(error)")
         }
