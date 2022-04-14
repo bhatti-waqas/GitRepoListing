@@ -20,4 +20,11 @@ extension ListingCoordinator: ListingNavigator {
     func showListDetail(with viewModel: ListingRowViewModel) {
         //TO-DO
     }
+    
+    func showErrorState() {
+        let factory = ServiceLocator.listingViewControllersFactory()
+        let listingErrorViewController = factory.makeListingErrorViewController(navigator: self)
+        listingErrorViewController.modalPresentationStyle = .fullScreen
+        rootViewController.present(listingErrorViewController, animated: true)
+    }
 }

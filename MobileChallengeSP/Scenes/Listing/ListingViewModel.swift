@@ -64,6 +64,10 @@ final class ListingViewModel {
         }
     }
     
+    public func showErrorView() {
+        navigator.showErrorState()
+    }
+    
     //MARK:- Private methods
     private func makeListingRowViewModel(with repository: Repository) -> ListingRowViewModel {
         .init(with: repository.id, nodeId: repository.nodeId, name: repository.name, isPrivate: repository.isPrivate, owner: repository.owner)

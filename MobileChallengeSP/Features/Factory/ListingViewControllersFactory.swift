@@ -30,15 +30,12 @@ final class ListingViewControllersFactory {
         return listViewController
     }
     
-//    // MARK:- Public Methods
-//    func makeListingDetailViewController(navigator: ListingCoordinator, viewModel: ListingRowViewModel) -> ListingDetailViewController_v1 {
-//        let storyboard = UIStoryboard(name: .listingDetail)
-//        let viewController = storyboard.instantiateInitialViewController {
-//            ListingDetailViewController_v1(coder: $0, viewModel: viewModel)
-//        }
-//        guard let detailViewController = viewController else {
-//            fatalError("Failed to load ListingDetailViewController from storyboard.")
-//        }
-//        return detailViewController
-//    }
+    func makeListingErrorViewController(navigator: ListingCoordinator) -> ListingErrorViewController {
+        let storyboard = UIStoryboard(name: .listingError)
+        let viewController = storyboard.instantiateInitialViewController() as? ListingErrorViewController
+        guard let errorViewController = viewController else {
+            fatalError("Failed to load ListingDetailViewController from storyboard.")
+        }
+        return errorViewController
+    }
 }

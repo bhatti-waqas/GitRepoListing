@@ -10,6 +10,7 @@ import UIKit
 extension UIStoryboard {
     enum Name: String {
         case listing = "Listing"
+        case listingError = "ListingError"
     }
     
     convenience init(name: Name, bundle: Bundle? = nil) {

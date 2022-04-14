@@ -32,8 +32,11 @@ final class ListingViewController_v1: UIViewController {
         tableView.estimatedRowHeight = 100
         configureUI()
         viewModel.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.load()
-        
     }
     
     private func configureUI() {
@@ -81,7 +84,7 @@ extension ListingViewController_v1: ListingViewModelDelegate {
     }
     
     func onViewModelError(with error: Error) {
-        presentAlert(error.localizedDescription)
+        viewModel.showErrorView()
     }
     
     func onViewModelNeedsUpdate(at indexPath: IndexPath) {
