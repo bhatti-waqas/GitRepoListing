@@ -16,13 +16,13 @@ final class ListingUseCaseTests: XCTestCase {
         useCase = NetworkListingUseCase(networkService: networkService)
     }
     
-    func test_fetchListingssSucceeds() {
+    func test_fetchRepositoriesSucceeds() {
         // Given
-        var result: Result<[Listing], Error>!
-        let expectation = self.expectation(description: "Listings")
-        let listings = getMockListingResponse()
-        networkService.responses[APIURLs.listingUrl] = listings
-        //when
+        var result: Result<[Repository], Error>!
+        let expectation = self.expectation(description: "Trendings")
+        let repositories = getMockListingResponse()
+        networkService.responses[APIURLs.respositoriesUrl] = repositories
+        // when
         useCase.fetchListings(then: { value in
             result = value
             expectation.fulfill()
@@ -31,18 +31,18 @@ final class ListingUseCaseTests: XCTestCase {
         // Then
         self.waitForExpectations(timeout: 2.0, handler: nil)
         guard case .success = result else {
-            XCTFail()
+            XCTFail("Couldn't fetch trending repos.")
             return
         }
     }
     
-    func test_fetchListingsFails_onNetworkError() {
+    func test_fetchRepositoriesFails_onNetworkError() {
         // Given
-        var result: Result<[Listing], Error>!
-        let expectation = self.expectation(description: "Listings")
-        networkService.responses[APIURLs.listingUrl] = NetworkError.notFound
+        var result: Result<[Repository], Error>!
+        let expectation = self.expectation(description: "Trendings")
+        networkService.responses[APIURLs.respositoriesUrl] = NetworkError.notFound
 
-        //when
+        // when
         useCase.fetchListings(then: { value in
             result = value
             expectation.fulfill()
@@ -50,7 +50,7 @@ final class ListingUseCaseTests: XCTestCase {
         // Then
         self.waitForExpectations(timeout: 2.0, handler: nil)
         guard case .failure = result! else {
-            XCTFail()
+            XCTFail("Test didn't have failing state")
             return
         }
     }
@@ -60,13 +60,13 @@ final class ListingUseCaseTests: XCTestCase {
         super.tearDown()
     }
 }
-//MARK: MockResponseBuilder
+// MARK: MockResponseBuilder
 extension ListingUseCaseTests {
-    private func getMockListingResponse() -> ListingResponseModel {
+    private func getMockListingResponse() -> RespositoryResponseModel {
         do {
-            let path = Bundle(for: ListingUseCaseTests.self).path(forResource: "Listings", ofType: "json")!
+            let path = Bundle(for: ListingUseCaseTests.self).path(forResource: "Repositories", ofType: "json")!
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
-            return try JSONDecoder().decode(ListingResponseModel.self, from: data)
+            return try JSONDecoder().decode(RespositoryResponseModel.self, from: data)
         } catch {
             fatalError("Error: \(error)")
         }
