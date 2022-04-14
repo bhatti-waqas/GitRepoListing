@@ -34,7 +34,7 @@ final class ListingViewControllersFactory {
         let storyboard = UIStoryboard(name: .listingError)
         let viewController = storyboard.instantiateInitialViewController() as? ListingErrorViewController
         guard let errorViewController = viewController else {
-            fatalError("Failed to load ListingDetailViewController from storyboard.")
+            fatalError("Failed to load ListingErrorViewController from storyboard.")
         }
         return errorViewController
     }

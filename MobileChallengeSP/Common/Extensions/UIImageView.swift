@@ -9,7 +9,8 @@ import UIKit
 import SDWebImage
 
 extension UIImageView {
-  func setImage(with url: URL?) {
+  
+    func setImage(with url: URL?) {
     backgroundColor = .black
     if let imageURL = url {
       sd_setImage(with: imageURL,
