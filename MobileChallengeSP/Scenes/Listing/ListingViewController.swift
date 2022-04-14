@@ -51,7 +51,6 @@ final class ListingViewController: UIViewController {
             self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.5))
         }
     }
-    
 }
 
 // MARK: TableView DataSource
