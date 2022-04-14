@@ -53,7 +53,8 @@ final class ListingViewModel {
     
     func cellDidSelect(at indexPath: IndexPath) {
         let listRowViewModel = listingRowViewModels[indexPath.row]
-        navigator.showListDetail(with: listRowViewModel)
+        listRowViewModel.toggleRowState()
+        self.delegate?.onViewModelNeedsUpdate(at: indexPath)
     }
     
     public func throwError(with error: Error) {
@@ -70,6 +71,6 @@ final class ListingViewModel {
     
     //MARK:- Private methods
     private func makeListingRowViewModel(with repository: Repository) -> ListingRowViewModel {
-        .init(with: repository.id, nodeId: repository.nodeId, name: repository.name, isPrivate: repository.isPrivate, owner: repository.owner)
+        .init(with: repository.id, nodeId: repository.nodeId, name: repository.name, score: repository.score, isPrivate: repository.isPrivate , owner: repository.owner)
     }
 }

@@ -13,9 +13,10 @@ struct Repository: Decodable {
     let name: String
     let isPrivate: Bool
     let owner: Owner
+    let score: Int
     
     enum CodingKeys: String, CodingKey {
-        case id, name, owner, nodeId = "node_id", isPrivate = "private"
+        case id, name, owner, score ,nodeId = "node_id", isPrivate = "private"
     }
 }
 

@@ -10,8 +10,9 @@ import UIKit
 final class ListingTableViewCell: UITableViewCell {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var ownerNameLabel: UILabel!
-    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var detailsLabel: UILabel!
     @IBOutlet private weak var ownerImageView: UIImageView!
+    @IBOutlet weak var detailsView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,9 +27,10 @@ final class ListingTableViewCell: UITableViewCell {
     
     func configure(with viewModel: ListingRowViewModel) {
         nameLabel.text = viewModel.name
-        descriptionLabel.text = viewModel.id.toString()
         ownerNameLabel.text = viewModel.owner.login
-        guard let o = URL(string: viewModel.owner.avatarUrl) else { return }
-        ownerImageView.setImage(with: o)
+        detailsLabel.text = viewModel.score
+        guard let imgUrl = URL(string: viewModel.owner.avatarUrl) else { return }
+        ownerImageView.setImage(with: imgUrl)
+        detailsView.isHidden = viewModel.rowState == .normal
     }
 }

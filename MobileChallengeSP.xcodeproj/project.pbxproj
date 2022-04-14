@@ -15,6 +15,8 @@
 		490CD447280784C7000DDAC2 /* Repositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 490CD446280784C7000DDAC2 /* Repositories.json */; };
 		490CD44A28081D7A000DDAC2 /* ListingError.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490CD44928081D7A000DDAC2 /* ListingError.storyboard */; };
 		490CD44E280822E0000DDAC2 /* ListingErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD44D280822E0000DDAC2 /* ListingErrorViewController.swift */; };
+		4929C90C28085CBD00D17161 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4929C90B28085CBD00D17161 /* Lottie */; };
+		4929C90F2808637900D17161 /* retryAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4929C90E2808637900D17161 /* retryAnimation.json */; };
 		49C39695280703FD000B891D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C39694280703FD000B891D /* Assets.xcassets */; };
 		49C39698280703FD000B891D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C39696280703FD000B891D /* LaunchScreen.storyboard */; };
 		49C396AD280703FD000B891D /* MobileChallengeSPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C396AC280703FD000B891D /* MobileChallengeSPUITests.swift */; };
@@ -82,6 +84,7 @@
 		490CD446280784C7000DDAC2 /* Repositories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Repositories.json; sourceTree = "<group>"; };
 		490CD44928081D7A000DDAC2 /* ListingError.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListingError.storyboard; sourceTree = "<group>"; };
 		490CD44D280822E0000DDAC2 /* ListingErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingErrorViewController.swift; sourceTree = "<group>"; };
+		4929C90E2808637900D17161 /* retryAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = retryAnimation.json; sourceTree = "<group>"; };
 		49C39688280703FD000B891D /* MobileChallengeSP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileChallengeSP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C39694280703FD000B891D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49C39697280703FD000B891D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 			files = (
 				49C3972228076B7B000B891D /* SkeletonView in Frameworks */,
 				49C3971F28071DFD000B891D /* SDWebImage in Frameworks */,
+				4929C90C28085CBD00D17161 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +192,15 @@
 			path = ListingError;
 			sourceTree = "<group>";
 		};
+		4929C90D2808635500D17161 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4929C90E2808637900D17161 /* retryAnimation.json */,
+				49C39694280703FD000B891D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		49C3967F280703FD000B891D = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +230,7 @@
 				49C396C828070602000B891D /* Common */,
 				49C397062807191B000B891D /* Network */,
 				49C3970B28071979000B891D /* Features */,
-				49C39694280703FD000B891D /* Assets.xcassets */,
+				4929C90D2808635500D17161 /* Resources */,
 				49C39696280703FD000B891D /* LaunchScreen.storyboard */,
 				49C39699280703FD000B891D /* Info.plist */,
 			);
@@ -427,6 +440,7 @@
 			packageProductDependencies = (
 				49C3971E28071DFD000B891D /* SDWebImage */,
 				49C3972128076B7B000B891D /* SkeletonView */,
+				4929C90B28085CBD00D17161 /* Lottie */,
 			);
 			productName = MobileChallengeSP;
 			productReference = 49C39688280703FD000B891D /* MobileChallengeSP.app */;
@@ -503,6 +517,7 @@
 			packageReferences = (
 				49C3971D28071DFD000B891D /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				49C3972028076B7B000B891D /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				4929C90A28085CBD00D17161 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 49C39689280703FD000B891D /* Products */;
 			projectDirPath = "";
@@ -522,6 +537,7 @@
 			files = (
 				49C397042807084D000B891D /* Listing.storyboard in Resources */,
 				49C39698280703FD000B891D /* LaunchScreen.storyboard in Resources */,
+				4929C90F2808637900D17161 /* retryAnimation.json in Resources */,
 				490CD44A28081D7A000DDAC2 /* ListingError.storyboard in Resources */,
 				49C39695280703FD000B891D /* Assets.xcassets in Resources */,
 			);
@@ -933,6 +949,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4929C90A28085CBD00D17161 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.2.1;
+			};
+		};
 		49C3971D28071DFD000B891D /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
@@ -952,6 +976,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4929C90B28085CBD00D17161 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4929C90A28085CBD00D17161 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		49C3971E28071DFD000B891D /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 49C3971D28071DFD000B891D /* XCRemoteSwiftPackageReference "SDWebImage" */;

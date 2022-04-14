@@ -28,6 +28,7 @@ final class ListingViewController_v1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         configureUI()
@@ -76,6 +77,15 @@ extension ListingViewController_v1: SkeletonTableViewDataSource {
         return "ListingTableViewCell"
     }
 }
+
+//MARK: TableView Delegate
+extension ListingViewController_v1: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.cellDidSelect(at: indexPath)
+    }
+}
+
 //MARK: ViewModel Delegates
 extension ListingViewController_v1: ListingViewModelDelegate {
     
@@ -88,6 +98,6 @@ extension ListingViewController_v1: ListingViewModelDelegate {
     }
     
     func onViewModelNeedsUpdate(at indexPath: IndexPath) {
-        self.tableView.reloadRows(at: [indexPath], with: .none)
+        self.tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }

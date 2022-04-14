@@ -17,29 +17,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qL-TP-iWq">
-                                <rect key="frame" x="10" y="768" width="394" height="44"/>
+                                <rect key="frame" x="20" y="768" width="374" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ruD-li-NCk"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Retry"/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQE-o6-xas" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="10" y="54" width="394" height="559"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="retryAnimation"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reM-fm-tmx">
+                                <rect key="frame" x="10" y="633" width="394" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An alien is probably blocking your signal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73K-Xk-LEO">
+                                <rect key="frame" x="10" y="667" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="reM-fm-tmx" secondAttribute="trailing" constant="10" id="5Dj-8g-aNI"/>
+                            <constraint firstItem="reM-fm-tmx" firstAttribute="top" secondItem="eQE-o6-xas" secondAttribute="bottom" constant="20" id="7JH-7m-eNh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eQE-o6-xas" secondAttribute="trailing" constant="10" id="8cn-2Q-TCo"/>
+                            <constraint firstItem="2qL-TP-iWq" firstAttribute="top" secondItem="73K-Xk-LEO" secondAttribute="bottom" constant="80" id="BcP-A0-TkZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="2qL-TP-iWq" secondAttribute="bottom" constant="50" id="HdX-AD-G0a"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2qL-TP-iWq" secondAttribute="trailing" constant="10" id="Je8-xO-wio"/>
-                            <constraint firstItem="2qL-TP-iWq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="bxT-Mn-PCk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2qL-TP-iWq" secondAttribute="trailing" constant="20" id="Je8-xO-wio"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="73K-Xk-LEO" secondAttribute="trailing" constant="10" id="Kzw-Uv-s0I"/>
+                            <constraint firstItem="eQE-o6-xas" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="PTB-gA-TaD"/>
+                            <constraint firstItem="reM-fm-tmx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="Pt9-Sg-jV9"/>
+                            <constraint firstItem="2qL-TP-iWq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="bxT-Mn-PCk"/>
+                            <constraint firstItem="73K-Xk-LEO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="hb7-ii-SiN"/>
+                            <constraint firstItem="73K-Xk-LEO" firstAttribute="top" secondItem="reM-fm-tmx" secondAttribute="bottom" constant="10" id="r7I-dO-dos"/>
+                            <constraint firstItem="eQE-o6-xas" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="xNo-QO-i8O"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animationView" destination="eQE-o6-xas" id="9Ug-Yb-Jwc"/>
                         <outlet property="retryButton" destination="2qL-TP-iWq" id="MOg-FW-9aC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10" y="51"/>
+            <point key="canvasLocation" x="-10.144927536231885" y="50.892857142857139"/>
         </scene>
     </scenes>
     <resources>
