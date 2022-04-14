@@ -6,7 +6,6 @@ disabled_rules: # rule identifiers to exclude from running
   - force_cast
   - shorthand_operator
   - trailing_whitespace
-  - type_name
 
 cyclomatic_complexity:
   warning: 25 # two nested ifs are acceptable
