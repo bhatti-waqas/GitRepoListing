@@ -14,16 +14,14 @@ final class NetworkService: NetworkServiceProtocol {
         self.session = session
     }
     
-    func fetch<T>(_ url: String, completion: @escaping ResultHandler<T>) where T : Decodable {
+    func fetch<T>(_ url: String, completion: @escaping ResultHandler<T>) where T: Decodable {
         let url = URL(string: url)!
         let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
-            
             guard let httpResponse = response as? HTTPURLResponse,
                   httpResponse.statusCode.isSuccessHTTPCode,
                   let data = data else {
                       if let error = error {
                           completion(.failure(NetworkError(error: error)))
-                          
                       } else {
                           completion(.failure(NetworkError(response: response)))
                       }
@@ -36,11 +34,10 @@ final class NetworkService: NetworkServiceProtocol {
                 completion(.failure(NetworkError(error: error)))
             }
         })
-        
         task.resume()
     }
 }
-//MARK:- Error code
+// MARK: - Error code
 extension Int {
     public var isSuccessHTTPCode: Bool {
         return 200 <= self && self < 300

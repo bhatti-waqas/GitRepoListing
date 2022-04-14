@@ -12,7 +12,6 @@ extension UIStoryboard {
         case listing = "Listing"
         case listingError = "ListingError"
     }
-    
     convenience init(name: Name, bundle: Bundle? = nil) {
         self.init(name: name.rawValue, bundle: bundle)
     }

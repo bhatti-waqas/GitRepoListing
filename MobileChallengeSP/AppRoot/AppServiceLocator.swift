@@ -10,17 +10,18 @@ import UIKit
 
 let serviceLocator = AppServiceLocator.shared
 
-///`AppServiceLocator` is responsible to create/manage all dependencies of the application.
+/// AppServiceLocator` is responsible to create/manage all dependencies of the application.
 final class AppServiceLocator {
-    // MARK:- Class Property
+    // swiftlint: disable trailing_whitespace
+    // MARK: - Class Property
     static let shared = AppServiceLocator()
     
-    //MARK:- private Property
+    // MARK: - private Property
     private let listingUseCase: ListingUseCase
     
-    //MARK:- Init
+    // MARK: Init
     private init() {
-        //Register dependencies
+        // Register dependencies
         let networkService: NetworkServiceProtocol = NetworkService()
         listingUseCase = NetworkListingUseCase(networkService: networkService)
     }

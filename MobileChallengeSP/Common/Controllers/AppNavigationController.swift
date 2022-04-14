@@ -5,11 +5,9 @@
 //  Created by Waqas Naseem on 11/9/21.
 //
 
-
 import UIKit
 
 final class AppNavigationController: UINavigationController {
-    
     // MARK: - Public Methods
     override func viewDidLoad() {
         super.viewDidLoad()

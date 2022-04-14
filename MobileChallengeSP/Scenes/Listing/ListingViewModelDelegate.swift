@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol ListingViewModelDelegate : AnyObject {
+public protocol ListingViewModelDelegate: AnyObject {
     func onViewModelReady()
     func onViewModelError(with error: Error)
     func onViewModelNeedsUpdate(at indexPath: IndexPath)

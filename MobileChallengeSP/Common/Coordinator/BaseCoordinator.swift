@@ -12,19 +12,15 @@ import UIKit.UIViewController
 /// subclass can override `start` implementation for their specific presentation logic.
 class BaseCoordinator<T: UIViewController>: NSObject, Coordinator {
     let rootViewController: T
-
     var child: Coordinator?
-
     weak var parent: Coordinator?
     
-    //MARK: - init
-    
+    // MARK: - init
     init(rootViewController: T) {
         self.rootViewController = rootViewController
     }
     
-    //MARK: - Public Methods
-    
+    // MARK: - Public Methods
     /// show first view controller
     func start() {
         assertionFailure("child class must override it.")

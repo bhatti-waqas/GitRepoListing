@@ -9,15 +9,15 @@ import Foundation
 import UIKit
 
 final class ListingViewControllersFactory {
-    // MARK:- Private Properties
+    // MARK: - Private Properties
     private let listingUseCase: ListingUseCase
     
-    // MARK:- Init
+    // MARK: - Init
     init(listingUseCase: ListingUseCase) {
         self.listingUseCase = listingUseCase
     }
     
-    // MARK:- Public Methods
+    // MARK: - Public Methods
     func makeListingViewController(navigator: ListingCoordinator) -> ListingViewController {
         let storyboard = UIStoryboard(name: .listing)
         let viewModel = ListingViewModel(with: listingUseCase, navigator: navigator)

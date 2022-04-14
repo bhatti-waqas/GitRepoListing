@@ -24,7 +24,6 @@ extension UIFont {
     public enum FontName: String {
         case avenirDemiBold = "AvenirNextCondensed-DemiBold"
         case avenirRegular = "AvenirNextCondensed-Regular"
-        
     }
     
     public enum StandardSize: CGFloat {
@@ -40,4 +39,3 @@ extension UIFont {
         self.init(name: name.rawValue, size: size.value)!
     }
 }
-

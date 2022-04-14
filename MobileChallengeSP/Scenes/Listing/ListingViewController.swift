@@ -9,13 +9,12 @@ import Foundation
 import UIKit
 import SkeletonView
 
-final class ListingViewController_v1: UIViewController {
-    
-    // MARK:- Private Properties
+final class ListingViewController: UIViewController {
+    // MARK: - Private Properties
     private let viewModel: ListingViewModel
     @IBOutlet private weak var tableView: UITableView!
     
-    // MARK:- Init
+    // MARK: - Init
     init?(coder: NSCoder, viewModel: ListingViewModel) {
         self.viewModel = viewModel
         super.init(coder: coder)
@@ -55,8 +54,8 @@ final class ListingViewController_v1: UIViewController {
     
 }
 
-//MARK: TableView DataSource
-extension ListingViewController_v1: SkeletonTableViewDataSource {
+// MARK: TableView DataSource
+extension ListingViewController: SkeletonTableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
@@ -73,21 +72,22 @@ extension ListingViewController_v1: SkeletonTableViewDataSource {
         return cell
     }
     
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+    func collectionSkeletonView(_ skeletonView: UITableView,
+                                cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return "ListingTableViewCell"
     }
 }
 
-//MARK: TableView Delegate
-extension ListingViewController_v1: UITableViewDelegate {
+// MARK: TableView Delegate
+extension ListingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.cellDidSelect(at: indexPath)
     }
 }
 
-//MARK: ViewModel Delegates
-extension ListingViewController_v1: ListingViewModelDelegate {
+// MARK: ViewModel Delegates
+extension ListingViewController: ListingViewModelDelegate {
     
     func onViewModelReady() {
         self.reload()

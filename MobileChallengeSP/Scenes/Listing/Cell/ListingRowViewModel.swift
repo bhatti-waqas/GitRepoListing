@@ -21,7 +21,7 @@ public class ListingRowViewModel {
     let score: String
     var rowState: RowState = .normal
     
-    init(with id: Int, nodeId:String, name: String, score: Int , isPrivate: Bool, owner: Owner) {
+    init(with id: Int, nodeId: String, name: String, score: Int, isPrivate: Bool, owner: Owner) {
         self.id = id
         self.nodeId = nodeId
         self.name = name

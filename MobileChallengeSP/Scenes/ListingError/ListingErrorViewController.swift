@@ -8,10 +8,9 @@
 import UIKit
 import Lottie
 class ListingErrorViewController: UIViewController {
-
+    
     @IBOutlet private weak var retryButton: UIButton!
     @IBOutlet weak var animationView: AnimationView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         retryButton.addTarget(self, action: #selector(onRetry), for: .touchUpInside)

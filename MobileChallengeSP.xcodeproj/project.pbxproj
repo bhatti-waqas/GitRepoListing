@@ -49,7 +49,6 @@
 		49C3971628071979000B891D /* NetworkListingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3970E28071979000B891D /* NetworkListingUseCase.swift */; };
 		49C3971728071979000B891D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3970F28071979000B891D /* NetworkError.swift */; };
 		49C3971828071979000B891D /* ListingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3971128071979000B891D /* ListingUseCase.swift */; };
-		49C3971928071979000B891D /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3971328071979000B891D /* Listing.swift */; };
 		49C3971A28071979000B891D /* ListingViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3971528071979000B891D /* ListingViewControllersFactory.swift */; };
 		49C3971C280719DA000B891D /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3971B280719DA000B891D /* Repository.swift */; };
 		49C3971F28071DFD000B891D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 49C3971E28071DFD000B891D /* SDWebImage */; };
@@ -120,7 +119,6 @@
 		49C3970E28071979000B891D /* NetworkListingUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkListingUseCase.swift; sourceTree = "<group>"; };
 		49C3970F28071979000B891D /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		49C3971128071979000B891D /* ListingUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingUseCase.swift; sourceTree = "<group>"; };
-		49C3971328071979000B891D /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		49C3971528071979000B891D /* ListingViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewControllersFactory.swift; sourceTree = "<group>"; };
 		49C3971B280719DA000B891D /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		49C3972328076DB5000B891D /* ListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
@@ -403,7 +401,6 @@
 		49C3971228071979000B891D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				49C3971328071979000B891D /* Listing.swift */,
 				49C3971B280719DA000B891D /* Repository.swift */,
 			);
 			path = Entities;
@@ -608,7 +605,6 @@
 				49C396C2280704A9000B891D /* AppDelegate.swift in Sources */,
 				49C397012807084D000B891D /* ListingTableViewCell.swift in Sources */,
 				49C396DC280706E9000B891D /* UIFont+Extension.swift in Sources */,
-				49C3971928071979000B891D /* Listing.swift in Sources */,
 				49C397032807084D000B891D /* ListingCoordinator.swift in Sources */,
 				49C396FF2807084D000B891D /* ListingViewModel.swift in Sources */,
 				49C396CD28070623000B891D /* Coordinator.swift in Sources */,

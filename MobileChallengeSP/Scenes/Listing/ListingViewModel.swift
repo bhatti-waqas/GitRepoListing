@@ -9,7 +9,7 @@ import Foundation
 
 final class ListingViewModel {
     
-    public weak var delegate : ListingViewModelDelegate?
+    public weak var delegate: ListingViewModelDelegate?
     let screenTitle = "Trending"
     private let listingUseCase: ListingUseCase
     private unowned let navigator: ListingNavigator
@@ -20,7 +20,7 @@ final class ListingViewModel {
         self.navigator = navigator
     }
     
-    //MARK:- Public methods
+    // MARK: - Public methods
     public func load() {
         listingUseCase.fetchListings(then: { [weak self] result in
             guard let self = self else { return }
@@ -58,8 +58,8 @@ final class ListingViewModel {
     }
     
     public func throwError(with error: Error) {
-        //In some cases we are receiving errors from background threads.
-        //We need to make sure we use main thread since we are going to interact with UI
+        // In some cases we are receiving errors from background threads.
+        // We need to make sure we use main thread since we are going to interact with UI
         Run.onMainThread {
             self.delegate?.onViewModelError(with: error)
         }
@@ -69,8 +69,9 @@ final class ListingViewModel {
         navigator.showErrorState()
     }
     
-    //MARK:- Private methods
+    // MARK: - Private methods
     private func makeListingRowViewModel(with repository: Repository) -> ListingRowViewModel {
-        .init(with: repository.id, nodeId: repository.nodeId, name: repository.name, score: repository.score, isPrivate: repository.isPrivate , owner: repository.owner)
+        .init(with: repository.id, nodeId: repository.nodeId, name: repository.name,
+              score: repository.score, isPrivate: repository.isPrivate, owner: repository.owner)
     }
 }
