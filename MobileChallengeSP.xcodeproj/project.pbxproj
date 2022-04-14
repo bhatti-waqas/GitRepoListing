@@ -331,8 +331,8 @@
 		49C396F32807084D000B891D /* Listing */ = {
 			isa = PBXGroup;
 			children = (
-				49C396F42807084D000B891D /* ListingViewModel.swift */,
 				49C396F52807084D000B891D /* Cell */,
+				49C396F42807084D000B891D /* ListingViewModel.swift */,
 				49C396F82807084D000B891D /* ListingViewModelDelegate.swift */,
 				49C396F92807084D000B891D /* ListingCoordinator.swift */,
 				49C396FA2807084D000B891D /* Listing.storyboard */,
