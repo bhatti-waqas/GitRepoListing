@@ -1,8 +1,8 @@
 //
 //  AppNavigationController.swift
-//  ListingChallenge
+//  MobileChallengeSP
 //
-//  Created by Waqas Naseem on 11/9/21.
+//  Created by Waqas Naseem on 13.4.22
 //
 
 import UIKit
@@ -23,7 +23,7 @@ final class AppNavigationController: UINavigationController {
         navigationBar.tintColor = .white
         navigationController?.navigationBar.isTranslucent = false
         navigationBar.titleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: UIColor.black,
+            [NSAttributedString.Key.foregroundColor: UIColor.red,
              NSAttributedString.Key.font: UIFont(.avenirDemiBold, size: .standard(.h3))]
     }
 }
