@@ -8,7 +8,8 @@
 import UIKit
 
 extension UITableView {
-    public func dequeue<T>(for indexPath:IndexPath)->T where T:UITableViewCell{
+    public func dequeue<T>(for indexPath:IndexPath) -> T where T:UITableViewCell {
+        // swiftlint:disable force_cast
         return self.dequeueReusableCell(withIdentifier: T.cellIdentifier, for: indexPath) as! T
     }
 }

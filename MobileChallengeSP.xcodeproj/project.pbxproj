@@ -44,7 +44,6 @@
 		49C397022807084D000B891D /* ListingViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C396F82807084D000B891D /* ListingViewModelDelegate.swift */; };
 		49C397032807084D000B891D /* ListingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C396F92807084D000B891D /* ListingCoordinator.swift */; };
 		49C397042807084D000B891D /* Listing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C396FA2807084D000B891D /* Listing.storyboard */; };
-		49C397052807084D000B891D /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C396FB2807084D000B891D /* ListingViewController.swift */; };
 		49C397092807191B000B891D /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C397072807191B000B891D /* NetworkServiceProtocol.swift */; };
 		49C3970A2807191B000B891D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C397082807191B000B891D /* NetworkService.swift */; };
 		49C3971628071979000B891D /* NetworkListingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3970E28071979000B891D /* NetworkListingUseCase.swift */; };
@@ -55,7 +54,7 @@
 		49C3971C280719DA000B891D /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3971B280719DA000B891D /* Repository.swift */; };
 		49C3971F28071DFD000B891D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 49C3971E28071DFD000B891D /* SDWebImage */; };
 		49C3972228076B7B000B891D /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 49C3972128076B7B000B891D /* SkeletonView */; };
-		49C3972428076DB5000B891D /* ListingViewController_v1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3972328076DB5000B891D /* ListingViewController_v1.swift */; };
+		49C3972428076DB5000B891D /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3972328076DB5000B891D /* ListingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,7 +115,6 @@
 		49C396F82807084D000B891D /* ListingViewModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewModelDelegate.swift; sourceTree = "<group>"; };
 		49C396F92807084D000B891D /* ListingCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingCoordinator.swift; sourceTree = "<group>"; };
 		49C396FA2807084D000B891D /* Listing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Listing.storyboard; sourceTree = "<group>"; };
-		49C396FB2807084D000B891D /* ListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
 		49C397072807191B000B891D /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		49C397082807191B000B891D /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		49C3970E28071979000B891D /* NetworkListingUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkListingUseCase.swift; sourceTree = "<group>"; };
@@ -125,7 +123,7 @@
 		49C3971328071979000B891D /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		49C3971528071979000B891D /* ListingViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewControllersFactory.swift; sourceTree = "<group>"; };
 		49C3971B280719DA000B891D /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		49C3972328076DB5000B891D /* ListingViewController_v1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewController_v1.swift; sourceTree = "<group>"; };
+		49C3972328076DB5000B891D /* ListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,8 +341,7 @@
 				49C396F82807084D000B891D /* ListingViewModelDelegate.swift */,
 				49C396F92807084D000B891D /* ListingCoordinator.swift */,
 				49C396FA2807084D000B891D /* Listing.storyboard */,
-				49C396FB2807084D000B891D /* ListingViewController.swift */,
-				49C3972328076DB5000B891D /* ListingViewController_v1.swift */,
+				49C3972328076DB5000B891D /* ListingViewController.swift */,
 			);
 			path = Listing;
 			sourceTree = "<group>";
@@ -576,7 +573,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -586,7 +583,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49C3971828071979000B891D /* ListingUseCase.swift in Sources */,
-				49C397052807084D000B891D /* ListingViewController.swift in Sources */,
 				49C3971728071979000B891D /* NetworkError.swift in Sources */,
 				49C396E2280706E9000B891D /* UITableViewCell.swift in Sources */,
 				49C396DF280706E9000B891D /* UIViewController+Extension.swift in Sources */,
@@ -606,7 +602,7 @@
 				49C3970A2807191B000B891D /* NetworkService.swift in Sources */,
 				49C396E3280706E9000B891D /* UIImageView.swift in Sources */,
 				49C3971A28071979000B891D /* ListingViewControllersFactory.swift in Sources */,
-				49C3972428076DB5000B891D /* ListingViewController_v1.swift in Sources */,
+				49C3972428076DB5000B891D /* ListingViewController.swift in Sources */,
 				49C396C3280704A9000B891D /* AppServiceLocator.swift in Sources */,
 				49C397002807084D000B891D /* ListingRowViewModel.swift in Sources */,
 				49C396C2280704A9000B891D /* AppDelegate.swift in Sources */,

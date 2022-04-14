@@ -18,11 +18,11 @@ final class ListingViewControllersFactory {
     }
     
     // MARK:- Public Methods
-    func makeListingViewController(navigator: ListingCoordinator) -> ListingViewController_v1 {
+    func makeListingViewController(navigator: ListingCoordinator) -> ListingViewController {
         let storyboard = UIStoryboard(name: .listing)
         let viewModel = ListingViewModel(with: listingUseCase, navigator: navigator)
         let viewController = storyboard.instantiateInitialViewController {
-            ListingViewController_v1(coder: $0, viewModel: viewModel)
+            ListingViewController(coder: $0, viewModel: viewModel)
         }
         guard let listViewController = viewController else {
             fatalError("Failed to load ListingViewController from storyboard.")

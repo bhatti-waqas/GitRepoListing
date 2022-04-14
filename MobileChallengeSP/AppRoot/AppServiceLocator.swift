@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-let ServiceLocator = AppServiceLocator.shared
+let serviceLocator = AppServiceLocator.shared
 
 ///`AppServiceLocator` is responsible to create/manage all dependencies of the application.
 final class AppServiceLocator {
@@ -18,8 +18,8 @@ final class AppServiceLocator {
     //MARK:- private Property
     private let listingUseCase: ListingUseCase
     
-    // MARK:- Init
-    private init(){
+    //MARK:- Init
+    private init() {
         //Register dependencies
         let networkService: NetworkServiceProtocol = NetworkService()
         listingUseCase = NetworkListingUseCase(networkService: networkService)
