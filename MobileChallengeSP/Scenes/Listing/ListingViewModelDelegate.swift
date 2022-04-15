@@ -14,6 +14,5 @@ public protocol ListingViewModelDelegate: AnyObject {
 }
 
 protocol ListingNavigator: AnyObject {
-    func showListDetail(with viewModel: ListingRowViewModel)
     func showErrorState()
 }

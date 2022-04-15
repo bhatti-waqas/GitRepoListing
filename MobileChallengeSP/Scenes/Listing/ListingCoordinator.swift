@@ -19,9 +19,6 @@ final class ListingCoordinator: BaseCoordinator<AppNavigationController> {
 }
 
 extension ListingCoordinator: ListingNavigator {
-    func showListDetail(with viewModel: ListingRowViewModel) {
-        // TO-DO
-    }
     
     func showErrorState() {
         let factory = serviceLocator.listingViewControllersFactory()
