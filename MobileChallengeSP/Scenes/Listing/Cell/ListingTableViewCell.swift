@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Extensions
+import Foundation
 
 final class ListingTableViewCell: UITableViewCell {
     @IBOutlet private weak var nameLabel: UILabel!

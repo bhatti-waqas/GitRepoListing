@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class AppNavigationController: UINavigationController {
+final public class AppNavigationController: UINavigationController {
     // MARK: - Public Methods
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
     }
             
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    public override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
@@ -22,9 +22,9 @@ final class AppNavigationController: UINavigationController {
     private func configureUI() {
         navigationBar.tintColor = .white
         navigationController?.navigationBar.isTranslucent = false
-        navigationBar.titleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: getForeGroundColorForNavigationTitle(),
-             NSAttributedString.Key.font: UIFont(.avenirDemiBold, size: .standard(.h3))]
+//        navigationBar.titleTextAttributes =
+//            [NSAttributedString.Key.foregroundColor: getForeGroundColorForNavigationTitle(),
+//             NSAttributedString.Key.font: UIFont(.avenirDemiBold, size: .standard(.h3))]
     }
     
     private func getForeGroundColorForNavigationTitle() -> UIColor {

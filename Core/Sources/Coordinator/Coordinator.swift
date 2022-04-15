@@ -8,7 +8,7 @@
 import Foundation
 
 /// Types adopting the `Coordinator` protocol will used to start/manage view controllers navigations.
-protocol Coordinator: AnyObject {
+public protocol Coordinator: AnyObject {
     /// it will start the flow or navigation.
     func start()
     
@@ -22,14 +22,14 @@ protocol Coordinator: AnyObject {
 extension Coordinator {
     /// it will start the child coordinator.
     /// - Parameter coordinator: specify child coordinator.
-    func startChild(_ coordinator: Coordinator) {
+    public func startChild(_ coordinator: Coordinator) {
         child = coordinator
         child?.parent = self
         coordinator.start()
     }
     
     /// inform the parent coordinator that its child finished.
-    func didFinishChild() {
+    public func didFinishChild() {
         child = nil
         parent?.child = nil
     }

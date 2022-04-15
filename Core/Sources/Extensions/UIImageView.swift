@@ -10,7 +10,7 @@ import SDWebImage
 
 extension UIImageView {
   
-    func setImage(with url: URL?) {
+    public func setImage(with url: URL?) {
     backgroundColor = .black
     if let imageURL = url {
       sd_setImage(with: imageURL,
@@ -19,7 +19,5 @@ extension UIImageView {
     } else {
       image = UIImage(named: "placeHolder")
     }
-    layer.cornerRadius = 8.0
-    layer.masksToBounds = true
   }
 }

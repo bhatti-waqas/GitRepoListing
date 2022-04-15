@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Coordinator
+import UIComponents
 
 /// `AppCoordinator` is responsible to manage transition at windows level.
 final class AppCoordinator: BaseCoordinator<AppNavigationController> {

@@ -5,6 +5,7 @@
 //  Created by Waqas Naseem on 14.4.22
 //
 
+import Utilities
 import Foundation
 
 final class ListingViewModel {

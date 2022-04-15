@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UITableView {
+public extension UITableView {
     
     public func dequeue<T>(for indexPath: IndexPath) -> T where T: UITableViewCell {
         return self.dequeueReusableCell(withIdentifier: T.cellIdentifier, for: indexPath) as! T

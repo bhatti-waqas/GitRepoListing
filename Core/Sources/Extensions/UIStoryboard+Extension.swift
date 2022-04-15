@@ -9,12 +9,12 @@ import UIKit
 
 extension UIStoryboard {
     
-    enum Name: String {
+    public enum Name: String {
         case listing = "Listing"
         case listingError = "ListingError"
     }
     
-    convenience init(name: Name, bundle: Bundle? = nil) {
+    public convenience init(name: Name, bundle: Bundle? = nil) {
         self.init(name: name.rawValue, bundle: bundle)
     }
 }

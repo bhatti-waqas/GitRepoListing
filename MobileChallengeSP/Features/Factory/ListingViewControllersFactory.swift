@@ -5,7 +5,7 @@
 //  Created by Waqas Naseem on 13.4.22
 //
 
-import Foundation
+import Extensions
 import UIKit
 
 final class ListingViewControllersFactory {

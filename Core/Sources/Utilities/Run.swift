@@ -8,7 +8,7 @@
 import Foundation
 
 // swiftlint: disable type_name
-final class Run {
+public final class Run {
     
     public class func onMainThread(after delay: Double = 0, closure:@escaping () -> Void) {
         let when = DispatchTime.now() + delay
