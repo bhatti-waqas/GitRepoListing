@@ -198,7 +198,6 @@
 				49C396BD2807048A000B891D /* AppRoot */,
 				49C396E8280707A4000B891D /* Constants */,
 				49C396EB2807084D000B891D /* Scenes */,
-				49C396C828070602000B891D /* Common */,
 				49C397062807191B000B891D /* Network */,
 				49C3970B28071979000B891D /* Features */,
 				4929C90D2808635500D17161 /* Resources */,
@@ -227,13 +226,6 @@
 				49C396C1280704A9000B891D /* SceneDelegate.swift */,
 			);
 			path = AppRoot;
-			sourceTree = "<group>";
-		};
-		49C396C828070602000B891D /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		49C396E8280707A4000B891D /* Constants */ = {
