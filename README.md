@@ -41,3 +41,4 @@ This project uses Swift Package Manager [SPM](https://swift.org/package-manager/
 - uses lottie files for showing animation for loading with error
 - Covers Unit-Tests for NetworkUseCase and ListingViewModel
 - Provides Dark Mode support (Bonus point)
+- Modularized code with spm adding commong classes in a module named (Core)
