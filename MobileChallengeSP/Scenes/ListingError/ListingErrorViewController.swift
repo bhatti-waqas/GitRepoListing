@@ -11,17 +11,27 @@ class ListingErrorViewController: UIViewController {
     
     @IBOutlet private weak var retryButton: UIButton!
     @IBOutlet weak var animationView: AnimationView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         retryButton.addTarget(self, action: #selector(onRetry), for: .touchUpInside)
         configureAnimation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animationView.play()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        animationView.stop()
+    }
+    
     private func configureAnimation() {
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop
         animationView.animationSpeed = 0.5
-        animationView.play()
     }
     
     @objc private func onRetry() {
